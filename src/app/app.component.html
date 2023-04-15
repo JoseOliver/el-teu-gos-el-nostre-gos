@@ -1,11 +1,12 @@
-<Main></Main>
-<Navbar [sidenav]="sidenav"></Navbar>
+<Navbar [sidenav]="sidenav" [data]="data"></Navbar>
 <mat-sidenav-container (backdropClick)="sidenav.close()">
     <mat-sidenav #sidenav (keydown.escape)="sidenav.close()" disableClose>
-        <p>Menu</p>
+        <h4>Menu</h4>
+        <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Inicio</a>
+        <a routerLink="/user" routerLinkActive="active" ariaCurrentWhenActive="page">Perfil</a>
     </mat-sidenav>
     <mat-sidenav-content>
-        <p>contenido</p>
+        <!-- <button (click)="data.logged = true">Log In</button> -->
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
   <span>El teu Gos, el nostre Gos</span>
   <span class="right-spacer"></span>
-  <button mat-icon-button class="menu-icon" aria-label="menu icon" (click)="sidenav.toggle()">
+  <button mat-icon-button aria-label="profile icon" *ngIf="data.logged" (click)="this.router.navigate(['/', 'user'])">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="menu icon" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
