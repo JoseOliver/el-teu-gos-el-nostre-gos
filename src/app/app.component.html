@@ -1,4 +1,11 @@
-<Navbar/>
-
-<!-- default  -->
-<router-outlet></router-outlet>
+<Main></Main>
+<Navbar [sidenav]="sidenav"></Navbar>
+<mat-sidenav-container (backdropClick)="sidenav.close()">
+    <mat-sidenav #sidenav (keydown.escape)="sidenav.close()" disableClose>
+        <p>Menu</p>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <p>contenido</p>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
